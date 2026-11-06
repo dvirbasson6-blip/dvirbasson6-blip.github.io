@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<p>Redirecting back to the app…</p>
+<script>
+  // TikTok's OAuth dialog requires an HTTPS redirect_uri. This static page is just a relay:
+  // it forwards the same query string (code, state, error) on to the local ARETE Content
+  // System server running on this machine, which is where the OAuth flow actually continues.
+  window.location.replace('http://localhost:4320/oauth/tiktok/callback' + window.location.search);
+</script>
+</body>
+</html>
